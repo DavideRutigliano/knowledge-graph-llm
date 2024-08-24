@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/> .
+@prefix helm: <http://example.org/helm/> .
+
+ex:AuthService a ex:Microservice ;
+    ex:hasInterface ex:AuthInterface1;
+    ex:serviceName "Authentication Service" .
+
+ex:PaymentService a ex:Microservice ;
+    ex:serviceName "Payment Service" .
+
+ex:NotificationService a ex:Microservice ;
+    ex:serviceName "Notification Service" .
+
+ex:AuthInterface1 a ex:Interface ;
+    ex:connectedTo helm:AuthServiceParameters ;
+    ex:interfaceName "Authentication Interface 1" .
+
+helm:AuthServiceParameters a helm:Parameter ;
+    helm:defaultValue "true" ;
+    helm:parameterName "authServiceConfig" .
