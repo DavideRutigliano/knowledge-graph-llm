@@ -45,7 +45,7 @@ def main():
     # print_graph(graph)
 
     # llm = Ollama(model=MODEL, temperature=0)
-    llm = AzureChatOpenAI(deployment_name="genAILicensing2", temperature=0)
+    llm = AzureChatOpenAI(deployment_name="", temperature=0)
     print(f"Running query: '{QUERY}'")
     output = query(QUERY, llm, graph)
     print(f"Results: '{output}'")
@@ -53,6 +53,6 @@ def main():
 
 if __name__ == "__main__":
     os.environ["AZURE_OPENAI_ENDPOINT"] = ""
-    os.environ["AZURE_OPENAI_API_KEY"] = "
+    os.environ["AZURE_OPENAI_API_KEY"] = ""
     os.environ["OPENAI_API_VERSION"] = ""
     main()
